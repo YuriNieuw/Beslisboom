@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Beslisboom Thuisbatterij Groene-Woningen.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Beslisboom Thuisbatterij Groene-Woningen" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="A1B2C3D4-E5F6-7890-1234-56789ABCDEF0" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<tw-storydata name="Beslisboom Thuisbatterij Groene-Woningen" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="A1B2C3D4-E5F6-7890-1234-56789ABCDEF0" options="" tags="V1.9" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 * { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important; }
 html, body { background-color: #f4f6f8; color: #333333; margin: 0; padding: 0; }
 tw-story { background: #ffffff; padding: 25px 35px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 650px; width: 85%; margin: 40px auto; display: block; text-align: center !important; color: #333333; }
@@ -71,12 +71,12 @@ Welk type omvormer heeft u momenteel voor uw zonnepanelen?
 Is er veel schaduw aanwezig op uw (toekomstige) zonnepanelen?
 
 (link: &quot;Ja, er is veel schaduw&quot;)[ (set: $systeem_type to &quot;AC&quot;, $q_sch to &quot;Ja (veel schaduw)&quot;, $q_dak to &quot;n.v.t.&quot;, $q_dak_min to &quot;n.v.t.&quot;)(goto: &quot;VraagZevenEuropees&quot;) ]
-(link: &quot;Nee, er is weinig tot geen schaduw&quot;)[ (set: $q_sch to &quot;Nee (weinig tot geen)&quot;)(goto: &quot;VraagDrieDakvlakken&quot;) ]</tw-passagedata><tw-passagedata pid="5" name="VraagDrieDakvlakken" tags="" position="700,250" size="100,100">## Aantal Dakvlakken
-Over hoeveel verschillende dakvlakken zijn uw (toekomstige) zonnepanelen verdeeld?
+(link: &quot;Nee, er is weinig tot geen schaduw&quot;)[ (set: $q_sch to &quot;Nee (weinig tot geen)&quot;)(goto: &quot;VraagDrieDakvlakken&quot;) ]</tw-passagedata><tw-passagedata pid="5" name="VraagDrieDakvlakken" tags="" position="700,250" size="100,100">## Aantal Oriëntaties
+Over hoeveel verschillende oriëntaties (windrichtingen) en hellingshoeken zijn uw (toekomstige) zonnepanelen verdeeld?
 
-(link: &quot;1 of 2 dakvlakken&quot;)[ (set: $dakvlakken to 2, $q_dak to &quot;1 of 2 dakvlakken&quot;)(goto: &quot;VraagVierDakvlakCheck&quot;) ]
-(link: &quot;Precies 3 dakvlakken&quot;)[ (set: $dakvlakken to 3, $q_dak to &quot;3 dakvlakken&quot;)(goto: &quot;VraagVierDakvlakCheck&quot;) ]
-(link: &quot;Meer dan 3 dakvlakken&quot;)[ (set: $systeem_type to &quot;AC&quot;, $q_dak to &quot;Meer dan 3&quot;, $q_dak_min to &quot;n.v.t.&quot;)(goto: &quot;VraagZevenEuropees&quot;) ]</tw-passagedata><tw-passagedata pid="6" name="VraagVierDakvlakCheck" tags="" position="850,250" size="100,100">## Panelen per oriëntatie
+(link: &quot;1 of 2 oriëntaties&quot;)[ (set: $dakvlakken to 2, $q_dak to &quot;1 of 2 oriëntaties&quot;)(goto: &quot;VraagVierDakvlakCheck&quot;) ]
+(link: &quot;Precies 3 oriëntaties&quot;)[ (set: $dakvlakken to 3, $q_dak to &quot;3 oriëntaties&quot;)(goto: &quot;VraagVierDakvlakCheck&quot;) ]
+(link: &quot;Meer dan 3 oriëntaties&quot;)[ (set: $systeem_type to &quot;AC&quot;, $q_dak to &quot;Meer dan 3&quot;, $q_dak_min to &quot;n.v.t.&quot;)(goto: &quot;VraagZevenEuropees&quot;) ]</tw-passagedata><tw-passagedata pid="6" name="VraagVierDakvlakCheck" tags="" position="850,250" size="100,100">## Panelen per oriëntatie
 Kijkend naar de verdeling van uw zonnepanelen: wat is het minimale aantal zonnepanelen met exact dezelfde oriëntatie (windrichting) en hellingshoek?
 
 (link: &quot;3 of minder panelen&quot;)[ (set: $systeem_type to &quot;AC&quot;, $min_dak to 3, $q_dak_min to &quot;3 of minder panelen (Wordt AC-systeem)&quot;)(goto: &quot;VraagZevenEuropees&quot;) ]
@@ -354,8 +354,8 @@ Aantal panelen: (dropdown: bind $invoer_panelen, &quot;0&quot;, &quot;1&quot;, &
 &lt;li&gt;&lt;strong&gt;Type omvormer:&lt;/strong&gt; (print: $q_omv)&lt;/li&gt;
 ]
 &lt;li&gt;&lt;strong&gt;Veel schaduw:&lt;/strong&gt; (print: $q_sch)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Dakvlakken:&lt;/strong&gt; (print: $q_dak)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Minimaal aantal panelen (gelijke oriëntatie/helling):&lt;/strong&gt; (print: $q_dak_min)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aantal oriëntaties:&lt;/strong&gt; (print: $q_dak)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Min. panelen (gelijke oriëntatie/helling):&lt;/strong&gt; (print: $q_dak_min)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Europese voorkeur:&lt;/strong&gt; (print: $q_eu)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Aantal fasen:&lt;/strong&gt; (print: $q_fas)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Aantal zonnepanelen:&lt;/strong&gt; (print: $q_pan)&lt;/li&gt;
@@ -380,7 +380,7 @@ Aantal panelen: (dropdown: bind $invoer_panelen, &quot;0&quot;, &quot;1&quot;, &
 
 &lt;p&gt;&lt;em&gt;Dit advies geeft een eerste indicatie van de mogelijkheden en kosten. Tijdens een persoonlijk gesprek en een schouw bij u thuis bekijken we uw situatie zorgvuldig. Daarna ontvangt u een definitief advies op maat met een bijbehorende offerte.&lt;/em&gt;&lt;/p&gt;
 
-(set: $mail_link to &quot;mailto:?cc=offerte@groene-woningen.nl&amp;subject=Mijn Thuisbatterij Advies&amp;body=Hierbij mijn ingevulde antwoorden en geadviseerde thuisbatterij configuratie:%0D%0A%0D%0A--- UW ANTWOORDEN ---%0D%0AZonnepanelen aanwezig: &quot; + $q_zon + &quot;%0D%0AType omvormer: &quot; + $q_omv + &quot;%0D%0ASchaduw: &quot; + $q_sch + &quot;%0D%0ADakvlakken: &quot; + $q_dak + &quot;%0D%0AMin. panelen (gelijke oriëntatie): &quot; + $q_dak_min + &quot;%0D%0AEuropese voorkeur: &quot; + $q_eu + &quot;%0D%0AAantal fasen: &quot; + $q_fas + &quot;%0D%0AAantal zonnepanelen: &quot; + $q_pan + &quot;%0D%0A%0D%0A--- GEADVISEERD SYSTEEM (Configuratie &quot; + (text: $config) + &quot;) ---%0D%0AMerk: &quot; + $c_merk + &quot;%0D%0AType installatie: &quot; + $systeem_type + &quot;-gekoppeld%0D%0AOmvormer: &quot; + $c_omv + &quot; (&quot; + $c_omvw + &quot;)%0D%0ABatterij: &quot; + $c_bat + &quot; (&quot; + $c_batw + &quot;)%0D%0AC-rate: &quot; + $c_crate + &quot;%0D%0AMade in Europe: &quot; + $c_eu + &quot;%0D%0ARichtprijs: &quot; + $c_prijs + &quot;%0D%0A%0D%0ADit advies geeft een eerste indicatie van de mogelijkheden en kosten. Tijdens een persoonlijk gesprek en een schouw bij u thuis bekijken we uw situatie zorgvuldig. Daarna ontvangt u een definitief advies op maat met een bijbehorende offerte.%0D%0A%0D%0A&quot;)
+(set: $mail_link to &quot;mailto:?cc=offerte@groene-woningen.nl&amp;subject=Mijn Thuisbatterij Advies&amp;body=Hierbij mijn ingevulde antwoorden en geadviseerde thuisbatterij configuratie:%0D%0A%0D%0A--- UW ANTWOORDEN ---%0D%0AZonnepanelen aanwezig: &quot; + $q_zon + &quot;%0D%0AType omvormer: &quot; + $q_omv + &quot;%0D%0ASchaduw: &quot; + $q_sch + &quot;%0D%0AAantal oriëntaties: &quot; + $q_dak + &quot;%0D%0AMin. panelen (gelijke oriëntatie/helling): &quot; + $q_dak_min + &quot;%0D%0AEuropese voorkeur: &quot; + $q_eu + &quot;%0D%0AAantal fasen: &quot; + $q_fas + &quot;%0D%0AAantal zonnepanelen: &quot; + $q_pan + &quot;%0D%0A%0D%0A--- GEADVISEERD SYSTEEM (Configuratie &quot; + (text: $config) + &quot;) ---%0D%0AMerk: &quot; + $c_merk + &quot;%0D%0AType installatie: &quot; + $systeem_type + &quot;-gekoppeld%0D%0AOmvormer: &quot; + $c_omv + &quot; (&quot; + $c_omvw + &quot;)%0D%0ABatterij: &quot; + $c_bat + &quot; (&quot; + $c_batw + &quot;)%0D%0AC-rate: &quot; + $c_crate + &quot;%0D%0AMade in Europe: &quot; + $c_eu + &quot;%0D%0ARichtprijs: &quot; + $c_prijs + &quot;%0D%0A%0D%0ADit advies geeft een eerste indicatie van de mogelijkheden en kosten. Tijdens een persoonlijk gesprek en een schouw bij u thuis bekijken we uw situatie zorgvuldig. Daarna ontvangt u een definitief advies op maat met een bijbehorende offerte.%0D%0A%0D%0A&quot;)
 (link: &quot;Mail dit advies&quot;)[ (goto-url: $mail_link) ]
 
 (link: &quot;Start opnieuw&quot;)[ (goto: &quot;Start&quot;) ]
