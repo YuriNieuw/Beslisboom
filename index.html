@@ -376,8 +376,7 @@ Aantal panelen: (dropdown: bind $invoer_panelen, "0", "1", "2", "3", "4", "5", "
 
 <p><em>Dit advies geeft een eerste indicatie van de mogelijkheden en kosten. Tijdens een persoonlijk gesprek en een schouw bij u thuis bekijken we uw situatie zorgvuldig. Daarna ontvangt u een definitief advies op maat met een bijbehorende offerte. Deze prijsindicatie is vrijblijvend. Aan de genoemde bedragen kunnen geen rechten worden ontleend.</em></p>
 
-(set: $mail_link to "mailto:info@groene-woningen.nl?subject=Mijn Thuisbatterij Advies&body=Hierbij mijn thuisbatterij advies (Configuratie " + (text: $config) + "):%0D%0A%0D%0A- Merk: " + $c_merk + "%0D%0A- Systeem: " + $systeem_type + "-gekoppeld (" + (text: $fase) + "-fase)%0D%0A- Omvormer: " + $c_omv + " (" + $c_omvw + ")%0D%0A- Batterij: " + $c_bat + " (" + $c_batw + ")%0D%0A- Richtprijs: " + $c_prijs + "%0D%0A%0D%0ABekijk hier de PDF specificaties:%0D%0Ahttps%3A%2F%2Fyurinieuw.github.io%2FBeslisboom%2Fpdf%2FConfiguratie_" + (text: $config) + ".pdf%0D%0A%0D%0AGraag ontvang ik een offerte op maat.")
-(link: "Mail dit advies")[ (goto-url: $mail_link) ]
+(set: $mail_link to "mailto:info@groene-woningen.nl?subject=Mijn Thuisbatterij Advies&body=Hierbij mijn thuisbatterij advies (Configuratie " + (text: $config) + "):%0D%0A%0D%0A- Merk: " + $c_merk + "%0D%0A- Systeem: " + $systeem_type + "-gekoppeld (" + (text: $fase) + "-fase)%0D%0A- Omvormer: " + $c_omv + " (" + $c_omvw + ")%0D%0A- Batterij: " + $c_bat + " (" + $c_batw + ")%0D%0A- Richtprijs: " + $c_prijs + "%0D%0A%0D%0ABekijk hier de PDF specificaties:%0D%0A< https://yurinieuw.github.io/Beslisboom/pdf/Configuratie_" + (text: $config) + ".pdf > %0D%0A%0D%0AGraag ontvang ik een offerte op maat.")
 
 (link: "Start opnieuw")[ (goto: "Start") ]
 ]
